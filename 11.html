@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фонд спасения аксолотлей</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Ваши стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="custom-header" id="header">
+        <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="container">
+            <h1>Благотворительный фонд спасения аксолотлей</h1>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="row">
+            <!-- Боковое меню -->
+            <div class="col-lg-3">
+                <nav class="sidebar-menu menu">
+                    <h3>Меню</h3>
+                    <a class="nav-link" href="11.html">💒 Главная</a>
+                    <a class="nav-link" href="22.html">📖 О фонде</a>
+                    <a class="nav-link" href="33.html">🌸 Наши проекты</a>
+                    <a class="nav-link" href="44.html">💌 Как помочь</a>
+                    <a class="nav-link" href="55.html">📞 Контакты</a>
+                </nav>
+				
+	
+            </div>
+
+            <!-- Основной контент -->
+            <div class="col-lg-9">
+                <!-- Мини-игра -->
+                <section class="axolotl-game">
+                    <h1>Аксолотль ждёт тебя... и немного корма 🪱</h1>
+                    <p>Не дай аксолотлю стать просто лягушкой</p>
+                    <button id="feedBtn" class="btn-custom">Покормить аксолотля</button>
+                    <p id="feedCountText">Кормов выдано: <span id="feedCount">0</span></p>
+                    <img 
+                        id="axolotlImg" 
+                        src="Без названия20_20251104201004.png"         
+                        data-happy-src="Без названия21_20251104201046.png"              
+                        alt="Аксолотль"
+                        class="img-fluid">
+                </section>
+				
+				<section class="content-section">
+				<h2>Знаете ли вы? 🤔</h2>
+					<div id="fact-box" class="fact-box"></div>
+								<button onclick="showRandomFact()" class="btn-custom">Узнать ещё факт</button>
+								</section>
+
+                <!-- Секции контента -->
+                <section class="content-section">
+                    <h2>Добро пожаловать, дорогой друг!</h2>
+                    <p>
+                        Наш фонд занимается защитой и восстановлением популяции аксолотлей.<br>
+                        Эти милые и удивительные существа находятся под угрозой исчезновения,
+                        и мы заботимся о каждом аксолотле.
+                    </p>
+                    <img src="axolotl-axolotl-cute.gif" alt="Аксолотль" class="img-fluid" style="max-width: 450px;">
+                </section>
+
+                <section class="content-section">
+                    <h2>Кто такие аксолотли?</h2>
+                    <p>Аксолотли — это вечные дети среди амфибий. Они никогда не становятся взрослыми, остаются с жабрами и выглядят как улыбающиеся чудеса природы</p>
+                    <p>Они могут восстанавливать лапки, хвост и даже части сердца и мозга! Но отрастить новый аквариум — пока не могут</p>
+                    <p>Мы создаём для них условия, где они живут счастливо — с чистой водой, едой и любовью. Присоединяйся</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>Усыновите аксолотля</h2>
+                    <p>
+                        Вы можете стать «родителем» аксолотля, помогая ему жить в безопасности и получать необходимую заботу.<br>
+                        Каждый усыновлённый аксолотль получает индивидуальное имя и отчёт о своей жизни.
+                    </p>
+                    <a class="btn-custom" href="66.html">💌 Усыновить аксолотля</a>
+                </section>
+
+                <section class="content-section">
+                    <h2>Поддержка фонда</h2>
+                    <p>
+                        Ваши пожертвования помогают нам кормить аксолотлей,<br>
+                        обеспечивать им безопасные условия и развивать программы по сохранению природы.
+                    </p>
+                    <a class="btn-custom" href="66.html">💟 Сделать пожертвование</a>
+                </section>
+
+                <section class="content-section">
+                    <h2>Истории аксолотлей</h2>
+                    <p>
+                        Каждый аксолотль имеет свою историю.<br>
+                        Присоединяйтесь к нам, чтобы узнать о наших подопечных,<br>
+                        увидеть фотографии и узнать, как ваша помощь меняет жизнь этих удивительных животных.
+                    </p>
+                </section>
+								<section class="content-section">
+    <h2>Наш виртуальный аквариум </h2>
+    <p>Смотрите, как плавают аксолотли! 🐠 Покормите их, пожалуйста.</p>
+    <div id="aquarium" class="aquarium-container"></div>
+    <button onclick="feedAquarium()" class="aquarium-btn"> Покормить сейчас</button>
+</section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📧 axolotlfund@mail.ru</p>
+                    <p class="mb-0">📞 +7 800 555 35 55</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Адрес</h5>
+                    <a
+      href="https://yandex.ru/maps/?text=ул.%20Тоннельная,%24д.%2032,%20Сочи"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Открыть адрес на Яндекс.Картах"
+    >
+				ул. Тоннельная, д. 24, г. Сочи, Россия
+	</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Соцсети</h5>
+                    <p class="mb-1">
+                        <a href="https://vk.com/axolotlfund" target="_blank">📘 Вконтакте</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="https://telegram.org/axolotlfund" target="_blank">🎀 Телеграм</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr style="border-color: rgba(255,255,255,0.3); margin: 20px 0;">
+                    <p class="text-center mb-0">&copy; 2017 Фонд спасения аксолотлей. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="backToTop">Вернуться ⬆</button>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Ваши скрипты -->
+    <script src="js/меню.js"></script>
+</body>
+</html>

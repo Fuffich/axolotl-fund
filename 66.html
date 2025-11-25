@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фонд спасения аксолотлей</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Ваши стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="custom-header" id="header">
+        <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="container">
+            <h1>Форма заявки</h1>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="row">
+            <!-- Боковое меню -->
+            <div class="col-lg-3">
+                <nav class="sidebar-menu menu">
+                    <h3>Меню</h3>
+                    <a class="nav-link" href="11.html">💒 Главная</a>
+                    <a class="nav-link" href="22.html">📖 О фонде</a>
+                    <a class="nav-link" href="33.html">🌸 Наши проекты</a>
+                    <a class="nav-link" href="44.html">💌 Как помочь</a>
+                    <a class="nav-link" href="55.html">📞 Контакты</a>
+                </nav>
+            </div>
+
+            <!-- Основной контент -->
+            <div class="col-lg-9">
+                <!-- Форма -->
+                <section class="content-section">
+                    <h2>Заполните форму</h2>
+                    <p>Выберите, как вы хотите помочь и оставьте свои контакты, мы свяжемся с вами:</p>
+
+                    <form action="#" method="post" class="form-custom">
+                        <div class="mb-3">
+                            <label for="name">Имя:</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Введите ваше имя" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Введите ваш email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="help_type">Тип помощи:</label>
+                            <select id="help_type" name="help_type" class="form-control" required>
+                                <option value="">Выберите...</option>
+                                <option value="donation">Пожертвование</option>
+                                <option value="adoption">Усыновление аксолотля</option>
+                                <option value="volunteer">Волонтёрство</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message">Сообщение:</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" placeholder="Ваше сообщение..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-custom">Отправить заявку</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📧 axolotlfund@mail.ru</p>
+                    <p class="mb-0">📞 +7 800 555 35 55</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Адрес</h5>
+                    <a
+                        href="https://yandex.ru/maps/?text=ул.%20Тоннельная,%24д.%2032,%20Сочи"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Открыть адрес на Яндекс.Картах"
+                    >
+                        ул. Тоннельная, д. 24, г. Сочи, Россия
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Соцсети</h5>
+                    <p class="mb-1">
+                        <a href="https://vk.com/axolotlfund" target="_blank">📘 Вконтакте</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="https://telegram.org/axolotlfund" target="_blank">🎀 Телеграм</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr style="border-color: rgba(255,255,255,0.3); margin: 20px 0;">
+                    <p class="text-center mb-0">&copy; 2017 Фонд спасения аксолотлей. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="backToTop">Вернуться ⬆</button>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Ваши скрипты -->
+    <script src="js/меню.js"></script>
+</body>
+</html>
