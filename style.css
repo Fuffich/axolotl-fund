@@ -1,6 +1,9 @@
 /* Подключение Bootstrap */
 /* Убедитесь, что bootstrap.min.css лежит в папке bootstrap/css/ */
-
+@font-face {
+    font-family: "Minecraft Rus";
+    src: url("minecraft.ttf");
+}
 /* Ваши кастомные стили с адаптацией под Bootstrap */
 
 
@@ -697,5 +700,6 @@ body {
         transform: translateX(3px) skewX(3deg);
     }
 }
+
 
 
