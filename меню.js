@@ -167,10 +167,10 @@ function createAquarium() {
     
     // Массив с путями к маленьким картинкам аксолотлей
     const axolotlImages = [
-        'images/1.png',
-        'images/2.png', 
-        'images/3.png',
-        'images/3.png'
+        '1.png',
+        '2.png', 
+        '3.png',
+        '3.png'
     ];
     
     // Создаем аксолотлей с картинками
@@ -266,3 +266,4 @@ function createSeaweed() {
         aquarium.appendChild(seaweed);
     }
 }
+
