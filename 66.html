@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фонд спасения аксолотлей</title>
     
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Ваши стили -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Шапка -->
+
     <header class="custom-header" id="header">
         <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
         <div class="container">
@@ -19,10 +18,10 @@
         </div>
     </header>
 
-    <!-- Основной контент -->
+
     <main class="container">
         <div class="row">
-            <!-- Боковое меню -->
+ 
             <div class="col-lg-3">
                 <nav class="sidebar-menu menu">
                     <h3>Меню</h3>
@@ -35,7 +34,7 @@
                 </nav>
             </div>
 
-            <!-- Основной контент -->
+
             <div class="col-lg-9">
 			
 			<section class="content-section">
@@ -44,14 +43,14 @@
 
     <div id="aquarium" class="aquarium-container"></div>
 
-<!-- Счётчик кормов -->
+
 <p id="foodDisplay">Кормов на счёте:  <span id="foodCounter">0</span></p>
 
-    <!-- Кнопка кормления -->
+
     <button onclick="feedAquarium()" class="aquarium-btn">Покормить сейчас</button>
 </section>
 			
-                <!-- Форма -->
+
                 <section class="content-section">
                     <h2>Заполните форму</h2>
                     <p>Выберите, как вы хотите помочь и оставьте свои контакты, мы свяжемся с вами:</p>
@@ -83,9 +82,7 @@
                             <textarea id="message" name="message" rows="3" class="form-control" placeholder="Ваше сообщение..."></textarea>
                         </div>
 
-                        <!-- === ДОБАВЛЕННЫЕ БЛОКИ (по выбору) - НАХОДЯТСЯ ЗДЕСЬ, ЧТОБЫ СТРУКТУРА НЕ МЕНЯЛАСЬ === -->
-
-                        <!-- ПОЛЯ ДЛЯ ДОНАТА (изначально скрыты) -->
+                       
                         <div id="donation_block" class="mt-3" style="display:none;">
                             <h4 class="mb-3" style="color:#FF6F91;">Данные для пожертвования</h4>
 
@@ -111,7 +108,7 @@
                             </div>
                         </div>
 
-                        <!-- ПОЛЯ ДЛЯ УСЫНОВЛЕНИЯ / ОПЕКИ -->
+                       
                         <div id="adoption_block" class="mt-3" style="display:none;">
                             <h4 class="mb-3" style="color:#FF6F91;">Информация для усыновления / опеки</h4>
 
@@ -131,7 +128,7 @@
                             </div>
                         </div>
 
-                        <!-- ПОЛЯ ДЛЯ ВОЛОНТЁРСТВА -->
+                       
                         <div id="volunteer_block" class="mt-3" style="display:none;">
                             <h4 class="mb-3" style="color:#FF6F91;">Информация для волонтёров</h4>
 
@@ -157,7 +154,7 @@
                             </div>
                         </div>
 
-                        <!-- Кнопка отправки -->
+                       
                         <button type="submit" class="btn-custom mt-3">Отправить заявку</button>
 						
 					
@@ -168,7 +165,7 @@
         </div>
     </main>
 
-    <!-- Футер -->
+    
     <footer class="custom-footer">
         <div class="container">
             <div class="row">
@@ -207,12 +204,11 @@
         </div>
     </footer>
 
-    <!-- Кнопка "Наверх" -->
+
     <button id="backToTop">Вернуться ⬆</button>
 
-    <!-- Bootstrap JS -->
+  
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Ваши скрипты -->
     <script src="js/меню.js"></script>
 	<script src="js/аква.js" defer></script>
 	<script src="js/db-hook.js" defer></script>
@@ -238,4 +234,5 @@
 
 </body>
 </html>
+
 
