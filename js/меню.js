@@ -6,14 +6,13 @@ window.addEventListener('scroll', () => {
   const header = document.querySelector('#header');
   const headerBottom = header.getBoundingClientRect().bottom;
 
-  // прозрачность при скролле
+  // прозрачность 
   menu.classList.add('scrolling');
   clearTimeout(scrollTimer);
   scrollTimer = setTimeout(() => {
     menu.classList.remove('scrolling');
   }, 200);
 
-  // плавный переход между состояниями
   if (headerBottom <= 0 && !compactApplied) {
     compactApplied = true;
     menu.classList.add('compact');
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let feedCount = 0;
   feedCountText.textContent = feedCount;
 
-  // Массив надписей для разных количеств кликов
   const buttonTexts = {
     5: "Ещё корма! 🪱",
     10: "Я всё ещё голоден! 😋", 
@@ -52,27 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
       feedCount++;
       feedCountText.textContent = feedCount;
 
-      // Меняем картинку
       axolotlImg.src = happySrc;
-      
-      // Временная надпись "Ням!"
+
       feedBtn.textContent = 'Ням!';
 	  feedBtn.classList.add('noclick'); 
-      // Проверяем, нужно ли сменить постоянную надпись
+
       if (buttonTexts[feedCount]) {
         setTimeout(() => {
           feedBtn.textContent = buttonTexts[feedCount];
 		  feedBtn.classList.remove('noclick');
         }, 1200);
       } else {
-        // Возвращаем обычную надпись
+
         setTimeout(() => {
           feedBtn.textContent = defaultText;
 		  feedBtn.classList.remove('noclick'); 
         }, 1200);
       }
 	  
-      // Возвращаем картинку через 1.2 сек
+
       setTimeout(() => {
         axolotlImg.src = normalSrc;
       }, 1200);
@@ -82,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// 📱 Адаптивное меню
+// Адаптивное меню
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.menu-toggle');
@@ -96,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Кнопка "Вернуться"
+// Кнопка Вернуться
 document.addEventListener('DOMContentLoaded', () => {
   const backToTop = document.getElementById('backToTop');
   let scrollTimer;
@@ -108,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       backToTop.classList.remove('show');
     }
 
-    // если пользователь перестал листать — показать кнопку
+
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(() => {
       if (window.scrollY > 200) {
@@ -124,9 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-// Случайные факты об аксолотлях
 const axolotlFacts = [
     "Аксолотли могут регенерировать конечности, хвост, сердце и даже части мозга! 🧠",
     "Они остаются в личиночной форме всю жизнь - это называется неотения 🐣",
@@ -162,23 +155,18 @@ function showRandomFact() {
     }
 }
 
-
-// Запускаем всё при загрузке
 document.addEventListener('DOMContentLoaded', function() {
-    // ПОКАЗЫВАЕМ ФАКТ СРАЗУ ПРИ ЗАГРУЗКЕ
+
     showRandomFact();
 
-    // Автосмена фактов каждые 15 секунд
     setInterval(showRandomFact, 60000);
 });
 
 
 
 
-// Добавляем водоросли в аквариум
-
         (function () {
-            // элементы формы/блоков
+
             const form = document.querySelector('form.form-custom');
             const helpType = document.getElementById('help_type');
             const donationBlock = document.getElementById('donation_block');
@@ -191,21 +179,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (volunteerBlock) volunteerBlock.style.display = 'none';
             }
 
-            // при загрузке страницы — сброс формы и скрытие блоков
             document.addEventListener('DOMContentLoaded', function () {
                 try {
                     if (form && typeof form.reset === 'function') form.reset();
                 } catch (e) {
-                    // silent
+                  
                 }
                 hideAllBlocks();
-                // если браузер восстановил значение select, отобразим блок соответствующий значению
                 if (helpType) {
                     showBlockByValue(helpType.value);
                 }
             });
 
-            // показать блок по значению select
             function showBlockByValue(value) {
     hideAllBlocks();
     if (!value) return;
@@ -223,20 +208,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if(value === 'volunteer') addFadeSlide(volunteerBlock);
 }
 
-
-            // слушатель изменения select
             if (helpType) {
                 helpType.addEventListener('change', function () {
                     showBlockByValue(this.value);
                 });
             }
 
-            // при отправке — можно очистить поля и скрыть блоки (по желанию оставить отправку)
             if (form) {
                 form.addEventListener('submit', function (e) {
-                    // Если нужно тестировать локально, можно раскомментировать e.preventDefault();
-                    // e.preventDefault();
-                    // очистим поля и скроем блоки через небольшой таймаут, чтобы отправка прошла
                     setTimeout(function () {
                         try { form.reset(); } catch (err) {}
                         hideAllBlocks();
@@ -245,13 +224,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })();
 
-    // Маска для номера карты: ввод только цифр + автопробелы
     const cardNumber = document.getElementById('card_number');
 
     if(cardNumber){
         cardNumber.addEventListener('input', function(e){
-            let value = this.value.replace(/\D/g,''); // только цифры
-            value = value.substring(0,16); // максимум 16 цифр
+            let value = this.value.replace(/\D/g,''); 
+            value = value.substring(0,16); 
             let formatted = '';
             for(let i=0;i<value.length;i++){
                 if(i>0 && i%4===0) formatted += ' ';
@@ -261,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Маска для CVC: только 3 цифры
     const cardCvc = document.getElementById('card_cvc');
     if(cardCvc){
         cardCvc.addEventListener('input', function(e){
@@ -269,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Маска для MM/YY с автослэшем
     const cardExp = document.getElementById('card_exp');
     if(cardExp){
         cardExp.addEventListener('input', function(e){
@@ -290,9 +266,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if(form && toast){
         form.addEventListener("submit", function(e){
-    e.preventDefault(); // блокировка реальной отправки
+    e.preventDefault(); 
     
-    // Собираем данные формы
     let formData = new FormData(form);
     let helpType = formData.get("help_type") || "other";
 
@@ -320,19 +295,15 @@ document.addEventListener('DOMContentLoaded', function() {
         text += "Тип помощи: " + (formData.get("vol_help_type") || "") + "\n";
     }
 
-    // Создаём файл
     let blob = new Blob([text], {type: "text/plain"});
 
-    // Имя файла по типу
     let fileName = helpType + "_" + Date.now() + ".txt";
 
-    // Создаем загрузку файла
     let a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = fileName;
     a.click();
-    
-    // Сообщение (твой toast)
+
     toast.style.opacity = 1;
     toast.style.transform = "translateY(0)";
     setTimeout(() => {
@@ -340,7 +311,6 @@ document.addEventListener('DOMContentLoaded', function() {
         toast.style.transform = "translateY(-20px)";
     }, 4000);
 
-    // Сброс формы
     setTimeout(() => {
         form.reset();
         ['donation_block','adoption_block','volunteer_block'].forEach(id=>{
@@ -355,9 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-// Живая шкала 1–10
 const range = document.getElementById('designRange');
 const output = document.getElementById('designValue');
 
@@ -371,7 +338,7 @@ if (range && output) {
         }, 150);
     });
 }
-// Живая шкала для вопроса 13
+
 const comfortRange = document.getElementById('comfortRange');
 const comfortValue = document.getElementById('comfortValue');
 
@@ -385,7 +352,7 @@ if (comfortRange && comfortValue) {
         }, 150);
     });
 }
-// Появление поля суммы пожертвований
+
 const donatedYes = document.getElementById('donated_yes');
 const donatedNo = document.getElementById('donated_no');
 const donationBlock = document.getElementById('donationAmountBlock');
@@ -406,13 +373,13 @@ const fileInput = document.getElementById('file_upload');
 const filePreview = document.getElementById('filePreview');
 
 fileInput.addEventListener('change', () => {
-    filePreview.innerHTML = ''; // очищаем предыдущий превью
+    filePreview.innerHTML = ''; 
     if(fileInput.files && fileInput.files[0]){
         const reader = new FileReader();
         reader.onload = function(e){
             const img = document.createElement('img');
             img.src = e.target.result;
-            img.style.maxWidth = '150px'; // размер превью
+            img.style.maxWidth = '150px'; 
             img.style.maxHeight = '150px';
             img.style.border = '2px solid #FFD1DC';
             img.style.borderRadius = '10px';
@@ -428,9 +395,8 @@ const toast = document.getElementById('toast_message');
 
 if(form && toast){
     form.addEventListener('submit', function(e){
-        e.preventDefault(); // блокируем стандартную отправку, если нужно
+        e.preventDefault(); 
 
-        // ПОКАЗЫВАЕМ TOAST
         toast.style.opacity = 1;
         toast.style.transform = "translateY(0)";
         setTimeout(() => {
@@ -438,7 +404,6 @@ if(form && toast){
             toast.style.transform = "translateY(-20px)";
         }, 4000);
 
-        // Сброс формы
         setTimeout(() => { form.reset(); 
             const preview = document.getElementById('filePreview');
             if(preview) preview.innerHTML = ''; 
@@ -453,9 +418,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if(form && toast){
         form.addEventListener("submit", function(e){
-            e.preventDefault(); // блокируем реальную отправку
+            e.preventDefault();
 
-            // Показываем сообщение
             toast.style.opacity = 1;
             toast.style.transform = "translateY(0)";
             setTimeout(() => {
@@ -463,10 +427,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 toast.style.transform = "translateY(-20px)";
             }, 4000);
 
-            // Сброс формы через короткое время
             setTimeout(() => {
                 form.reset();
-                // Если есть скрытые блоки
                 const donationBlock = document.getElementById('donationAmountBlock');
                 if(donationBlock) donationBlock.style.display = 'none';
             }, 200);
@@ -476,11 +438,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// ================== REAL STATS LOCALSTORAGE ==================
-
 const STATS_KEY = 'survey_stats_v1';
 
-// Получаем или создаем статистику
 function getStats() {
     let stats = localStorage.getItem(STATS_KEY);
     if (!stats) {
@@ -496,7 +455,7 @@ function getStats() {
     return JSON.parse(stats);
 }
 
-// Сохраняем статистику
+
 function saveStats(stats) {
     localStorage.setItem(STATS_KEY, JSON.stringify(stats));
 }
@@ -527,7 +486,6 @@ function renderStats() {
         statBlocks[2].innerHTML = `⭐ ${avgDesign} / 10`;
     }
 
-    // Прогресс удовлетворённости (по удобству сайта)
     const progress = document.querySelector('progress');
     if (progress) {
         const percent = Math.round((avgComfort / 5) * 100);
@@ -536,25 +494,24 @@ function renderStats() {
     }
 }
 
-// Обработка отправки формы
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('survey_form');
     if (!form) return;
 
-    renderStats(); // Показать статистику при загрузке
+    renderStats(); 
 
     form.addEventListener('submit', function () {
         const stats = getStats();
 
         stats.total++;
 
-        // Любят ли аксолотлей
+
         const likeYes = document.getElementById('like_yes');
         if (likeYes && likeYes.checked) {
             stats.likeAxoYes++;
         }
 
-        // Оценки
+
         const design = document.getElementById('designRange');
         const comfort = document.getElementById('comfortRange');
 
@@ -565,6 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
         renderStats();
     });
 });
+
 
 
 
