@@ -1,5 +1,3 @@
-/* Подключение Bootstrap */
-/* Убедитесь, что bootstrap.min.css лежит в папке bootstrap/css/ */
 @font-face {
   font-family: "Minecraft Rus";
   src: url("../minecraft.ttf") format("truetype");
@@ -7,7 +5,6 @@
   font-style: normal;
   font-display: swap;
 }
-/* Ваши кастомные стили с адаптацией под Bootstrap */
 :root {
     --pastel-pink: #FFE4E1;
     --light-pink: #FFF0F5;
@@ -25,7 +22,6 @@ body {
     padding: 0;
 }
 
-/* Шапка — яркий градиент */
 .custom-header {
     background: var(--header-gradient);
     color: #fff;
@@ -43,7 +39,6 @@ body {
     font-size: 32px;
 }
 
-/* Кнопка меню для мобильных */
 .menu-toggle {
     display: none;
     position: absolute;
@@ -61,10 +56,9 @@ body {
     z-index: 2000;
 }
 
-/* Боковое меню */
 .sidebar-menu {
-    position: absolute;       /* ← ДОБАВИЛ */
-    top: 0px;              /* ← ДОБАВИЛ - ровно под шапкой */
+    position: absolute;     
+    top: 0px;             
     background-color: var(--pastel-pink);
     padding: 20px;
     border-radius: 15px;
@@ -79,8 +73,8 @@ body {
 }
 
 .sidebar-menu.compact {
-    position: fixed;         /* ← ДОБАВИЛ */
-    top: 20px;              /* ← ДОБАВИЛ - вверху во время скролла */
+    position: fixed;        
+    top: 20px;             
     transform: translateY(0);
 }
 .sidebar-menu h3 {
@@ -104,7 +98,6 @@ body {
     color: var(--accent-pink);
 }
 
-/* Контентные секции */
 .content-section {
     background-color: var(--light-pink);
     padding: 25px;
@@ -141,7 +134,6 @@ body {
     height: auto;
 }
 
-/* Кнопки */
 .btn-custom {
     display: inline-block;
     background-color: var(--pastel-green);
@@ -162,7 +154,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Мини-игра */
 .axolotl-game {
     text-align: center;
     padding: 40px 20px;
@@ -203,7 +194,6 @@ body {
     filter: saturate(1.05) drop-shadow(0 6px 12px rgba(0,0,0,0.08));
 }
 
-/* Футер */
 .custom-footer {
     background: var(--header-gradient);
     color: #fff;
@@ -227,7 +217,6 @@ body {
     color: #FFD1DC;
 }
 
-/* Кнопка "Наверх" */
 #backToTop {
     position: fixed;
     bottom: 25px;
@@ -256,7 +245,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -307,7 +295,6 @@ body {
     }
 }
 
-/* Скрываем кнопку "Наверх" на десктопе */
 @media (min-width: 769px) {
     #backToTop {
         display: none !important;
@@ -315,9 +302,6 @@ body {
 }
 
 
-/* Добавь эти стили в конец твоего CSS файла */
-
-/* Стили для таблицы */
 .custom-table {
     width: 100%;
     border-collapse: collapse;
@@ -341,7 +325,7 @@ body {
     text-align: center;
 }
 
-/* Адаптивность таблицы */
+
 @media (max-width: 768px) {
     .custom-table th,
     .custom-table td {
@@ -351,7 +335,7 @@ body {
 }
 
 
-/* Стили для формы - адаптированные под Bootstrap */
+
 .form-custom .form-control {
     width: 100%;
     padding: 10px 12px;
@@ -370,7 +354,7 @@ body {
     opacity: 0.8;
 }
 
-/* Стили для select */
+
 .form-custom select.form-control {
     appearance: none;
     -webkit-appearance: none;
@@ -389,7 +373,7 @@ body {
     display: none;
 }
 
-/* Подсветка розовым при фокусе */
+
 .form-custom .form-control:focus {
     border-color: #FFB6C1;
     box-shadow: 0 0 6px #FFB6C1;
@@ -397,7 +381,7 @@ body {
     background-color: #FFFFFF;
 }
 
-/* Стили для label */
+
 .form-custom label {
     display: block;
     font-weight: bold;
@@ -405,18 +389,18 @@ body {
     margin-bottom: 5px;
 }
 
-/* Стили для textarea */
+
 .form-custom textarea.form-control {
     resize: vertical;
     min-height: 120px;
 }
 
-/* Отступы для полей формы */
+
 .form-custom .mb-3 {
     margin-bottom: 15px !important;
 }
 
-/* Кнопка формы */
+
 .form-custom .btn-custom {
     display: inline-block;
     background-color: #A8E6CF;
@@ -438,7 +422,7 @@ body {
     background-color: #228B22;
 }
 
-/* Адаптивность для формы */
+
 @media (max-width: 768px) {
     .form-custom .form-control {
         font-size: 16px;
@@ -453,9 +437,6 @@ body {
 
 
 
-
-
-/* Стили для фактов */
 .fact-box {
     padding: 20px;
     background-color: #FFF0F5; /* светло-розовый фон как у секций */
@@ -463,9 +444,9 @@ body {
     border-left: 5px solid #A8E6CF;
     font-size: 1.1em;
     margin: 15px 0;
-    color: #6B8E23; /* ЗЕЛЕНЫЙ текст как везде на сайте */
-    text-indent: 30px; /* Отступ как в основном тексте */
-    line-height: 1.7; /* Межстрочный интервал как везде */
+    color: #6B8E23; /* ЗЕЛЕНЫЙ  */
+    text-indent: 30px; 
+    line-height: 1.7; 
 }
 
 .facts-sidebar {
@@ -473,21 +454,21 @@ body {
     padding: 15px;
     border-radius: 15px;
     margin-top: 20px;
-    color: #6B8E23; /* ЗЕЛЕНЫЙ текст */
+    color: #6B8E23; /* ЗЕЛЕНЫЙ  */
 }
 
 .facts-sidebar h4 {
-    color: #FF6F91; /* Розовый заголовок как h2 */
+    color: #FF6F91; /* Розовый  */
     margin-bottom: 10px;
 }
 
 .fact-text {
-    color: #6B8E23; /* ЗЕЛЕНЫЙ текст */
+    color: #6B8E23; 
     line-height: 1.5;
     margin-bottom: 10px;
 }
 
-/* Аквариум */
+
 .aquarium-container {
     position: relative;
     height: 200px;
@@ -530,13 +511,6 @@ body {
 }
 
 
-
-
-
-
-
-
-/* Аквариум */
 .aquarium-container {
     position: relative;
     height: 250px;
@@ -554,17 +528,17 @@ body {
     z-index: 2;
     filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
     
-    /* Полный сброс всех возможных рамок */
+
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
     background: none !important;
 	
-    /* Для IE */
+
     border-style: none;
 }
 
-/* Каждый второй аксолотль отражаем для разнообразия */
+
 
 @keyframes float {
     0% { transform: translateX(0) translateY(0) rotate(0deg) scaleX(1); }
@@ -574,7 +548,7 @@ body {
     100% { transform: translateX(0) translateY(0) rotate(0deg) scaleX(1); }
 }
 
-/* Пузыри */
+
 .bubble {
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
@@ -596,7 +570,7 @@ body {
     }
 }
 
-/* Еда */
+
 .food {
     position: absolute;
     animation: sink linear;
@@ -618,7 +592,7 @@ body {
     }
 }
 
-/* Кнопка кормления */
+
 .aquarium-btn {
     background-color: #A8E6CF;
     color: #fff;
@@ -638,7 +612,7 @@ body {
 }
 
 
-/* Водоросли */
+
 .seaweed {
     position: absolute;
     bottom: 0;
@@ -646,10 +620,10 @@ body {
     background: linear-gradient(to top, #2E8B57, #3CB371, #66CDAA);
     border-radius: 4px 4px 0 0;
     animation: seaweed-sway ease-in-out infinite;
-    z-index: 0; /* Под аксолотлями и пузырями */
+    z-index: 0; 
 }
 
-/* Листья водорослей (опционально) */
+
 .seaweed::before,
 .seaweed::after {
     content: '';
@@ -672,7 +646,7 @@ body {
     transform: rotate(30deg);
 }
 
-/* Анимация колыхания водорослей */
+
 @keyframes seaweed-sway {
     0%, 100% { 
         transform: skewX(0deg) scaleY(1);
@@ -688,7 +662,7 @@ body {
     }
 }
 
-/* Или более простая анимация */
+
 @keyframes seaweed-sway-simple {
     0%, 100% { 
         transform: translateX(0) skewX(0deg);
@@ -697,7 +671,7 @@ body {
         transform: translateX(3px) skewX(3deg);
     }
 }
-/* Обёртка аксолотля — её двигает JS */
+
 .axolotl {
   position: absolute;
   width: 50px;
@@ -709,7 +683,7 @@ body {
 }
 .axolotl:active { cursor: grabbing; }
 
-/* Картинка внутри — только “живая” анимация, без перемещения по аквариуму */
+
 .axolotl .floating-axolotl-img {
   position: absolute;
   width: 50px;
@@ -717,7 +691,7 @@ body {
   left: 0;
   top: 0;
 
-  /* ВАЖНО: убираем старую анимацию float, которая двигала по X/Y */
+ 
   animation: axo-wiggle 3.5s infinite ease-in-out;
 
   filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
@@ -726,15 +700,13 @@ body {
   box-shadow: none !important;
   background: none !important;
   user-select: none;
-  pointer-events: none; /* чтобы drag работал по wrapper */
+  pointer-events: none; 
 }
 
-/* Отражение без влияния на координаты */
 .axolotl .floating-axolotl-img.flip {
   transform: scaleX(-1);
 }
 
-/* Лёгкое покачивание */
 @keyframes axo-wiggle {
   0%   { transform: rotate(0deg); }
   25%  { transform: rotate(4deg); }
@@ -743,7 +715,7 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-/* Еда: убираем sink-анимацию, потому что падение будет JS (иначе transform конфликтует) */
+
 .food {
   position: absolute;
   z-index: 3;
@@ -756,8 +728,6 @@ body {
 
 
 
-
-/* Плавное появление блоков */
 .fade-slide {
     opacity: 0;
     transform: translateY(-20px);
@@ -768,28 +738,27 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-/* Увеличиваем ширину текстовых полей для блоков */
+
 #adopt_experience, #vol_schedule, #message {
     width: 100%;
-    min-height: 100px; /* можно увеличить */
-}
-/* Вставь в css/style.css в конце */
-.form-control {
-    width: 100% !important; /* всегда полная ширина */
-    box-sizing: border-box;  /* padding и border учитываются в ширине */
+    min-height: 100px;
 }
 
-/* Если select тоже кастомно стилизован */
+.form-control {
+    width: 100% !important; 
+    box-sizing: border-box;  
+}
+
+
 select.form-control {
     width: 100% !important;
 }
 
 
 
-/* Сделает текст некликабельным и нельзя выделять */
 .noclick {
-    pointer-events: none; /* запрет клика */
-    user-select: none;    /* запрет выделения текста */
+    pointer-events: none; 
+    user-select: none;  
 }
 
 
@@ -798,11 +767,10 @@ select.form-control {
 
 
 
-/* ====================
+/*
    СТИЛИ ДЛЯ ОПРОСНИКА
-   ==================== */
+ */
 
-/* Range (ползунок 1–10) */
 .form-custom input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
@@ -823,7 +791,7 @@ select.form-control {
     box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 
-/* Firefox */
+
 .form-custom input[type="range"]::-moz-range-thumb {
     width: 24px;
     height: 24px;
@@ -832,21 +800,21 @@ select.form-control {
     cursor: pointer;
 }
 
-/* Радио кнопки */
+
 .form-custom input[type="radio"] {
     accent-color: #FF6F91;
     transform: scale(1.3);
     margin-right: 6px;
 }
 
-/* Чекбоксы */
+
 .form-custom input[type="checkbox"] {
     accent-color: #A8E6CF;
     transform: scale(1.3);
     margin-right: 6px;
 }
 
-/* Цветовая палитра */
+
 .form-custom input[type="color"] {
     width: 60px;
     height: 35px;
@@ -855,13 +823,13 @@ select.form-control {
     cursor: pointer;
 }
 
-/* Дата */
+
 .form-custom input[type="date"] {
     background-color: #FFF8F8;
     border-radius: 10px;
 }
 
-/* Файл */
+
 .form-custom input[type="file"] {
     padding: 8px;
     border-radius: 12px;
@@ -870,7 +838,7 @@ select.form-control {
     cursor: pointer;
 }
 
-/* Progress (статистика) */
+
 progress {
     width: 100%;
     height: 22px;
@@ -888,7 +856,6 @@ progress::-webkit-progress-value {
     border-radius: 12px;
 }
 
-/* Стат-блоки */
 .stat-box {
     background: #FFF0F5;
     border: 2px solid #FFD1DC;
@@ -897,13 +864,12 @@ progress::-webkit-progress-value {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Эффект наведения на варианты */
+
 .form-custom label:hover {
     text-shadow: 0 0 2px #FFB6C1;
 }
 
 
-/* Анимация и оформление шкалы */
 
 .range-wrapper {
     display: flex;
@@ -928,17 +894,13 @@ progress::-webkit-progress-value {
     transform: scale(1.2);
     box-shadow: 0 0 15px rgba(255,105,145,0.8);
 }
-/* ===============================
-   КРАСИВЫЕ RADIO И CHECKBOX
-   =============================== */
 
-/* Прячем стандартные */
+
 .form-custom input[type="radio"],
 .form-custom input[type="checkbox"] {
     display: none;
 }
 
-/* Общий стиль для кастомных вариантов */
 .form-custom .custom-option {
     display: flex;
     align-items: center;
@@ -954,7 +916,6 @@ progress::-webkit-progress-value {
     font-family: 'Minecraft Rus', sans-serif;
 }
 
-/* Кружочек / квадратик */
 .form-custom .custom-option::before {
     content: "";
     width: 20px;
@@ -965,27 +926,24 @@ progress::-webkit-progress-value {
     transition: 0.2s ease;
 }
 
-/* Для checkbox меняем форму */
+
 .form-custom .custom-option.checkbox::before {
     border-radius: 6px;
 }
 
-/* Когда выбрано */
+
 .form-custom input:checked + .custom-option::before {
     background: #FF6F91;
     box-shadow: inset 0 0 0 4px #fff;
 }
 
-/* Наведение */
+
 .form-custom .custom-option:hover {
     background: #FFE4E1;
     transform: scale(1.02);
 }
 
 
-/* ===============================
-   INPUT TYPE COLOR
-   =============================== */
 .form-custom input[type="color"] {
     width: 80px;
     height: 45px;
@@ -997,9 +955,6 @@ progress::-webkit-progress-value {
 }
 
 
-/* ===============================
-   INPUT TYPE FILE
-   =============================== */
 
 .form-custom input[type="file"] {
     display: none;
@@ -1024,7 +979,7 @@ progress::-webkit-progress-value {
 
 
 
-/* Стили вопроса 12 */
+/* 12 */
 
 .color-presets {
     display: flex;
@@ -1069,15 +1024,14 @@ progress::-webkit-progress-value {
 
 
 
-/* ====== Секция статистики ====== */
 .content-section h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #FF6F91; /* основной цвет сайта */
+    color: #FF6F91;
 }
 
 .content-section .row .col-md-4 .p-3 {
-    background-color: #fff0f5; /* нежный розовый фон, похожий на стиль сайта */
+    background-color: #fff0f5; 
     border-radius: 15px;
     padding: 25px 15px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
@@ -1100,7 +1054,6 @@ progress::-webkit-progress-value {
     color: #555;
 }
 
-/* ====== Прогрессбар ====== */
 .content-section progress {
     -webkit-appearance: none;
     appearance: none;
@@ -1128,7 +1081,6 @@ progress::-webkit-progress-value {
     transition: width 0.5s ease;
 }
 
-/* ====== Лейбл прогресса ====== */
 .content-section label {
     font-weight: 500;
     display: block;
@@ -1148,13 +1100,11 @@ progress::-webkit-progress-value {
     margin: 10px auto 15px auto;
     width: fit-content;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    text-indent: 0; /* <- сбрасываем отступ */
+    text-indent: 0; 
 }
 
 
 //Аквариум
-
-/* ====== HUD (уровень/комбо) ====== */
 .aq-hud{
   position:absolute; left:10px; top:10px; z-index:10;
   background: rgba(255,240,245,0.88);
@@ -1166,7 +1116,7 @@ progress::-webkit-progress-value {
 }
 .aq-hud b{ color:#228B22; }
 
-/* ====== “поел” (пункт 2) ====== */
+
 .axolotl .floating-axolotl-img.eat {
   animation: eat-pop 0.18s ease-out 0s 2;
 }
@@ -1176,19 +1126,16 @@ progress::-webkit-progress-value {
   100% { transform: scale(1) rotate(0deg); }
 }
 
-/* ====== golden food (пункт 12) ====== */
 .food.gold{
   text-shadow: 0 0 10px rgba(255,215,0,0.9);
   filter: drop-shadow(0 0 8px rgba(255,215,0,0.65));
 }
 
-/* ====== “party mode” (пункт 5) ====== */
 .aq-party{
   box-shadow: 0 0 0 3px rgba(255,105,180,0.35) inset;
 }
 
 
-/* Панель под/рядом с аквариумом */
 .aq-panel{
   max-width: 520px;
   margin: 12px auto 0;
@@ -1227,20 +1174,17 @@ progress::-webkit-progress-value {
   box-shadow: 0 10px 22px rgba(255,105,180,0.18);
 }
 
-/* Тема "Ночь" — меняем фон аквариума */
 #aquarium.aq-night{
   background: linear-gradient(180deg, #0b1630, #0b3a66);
   border-color: #A8E6CF;
 }
 
-/* Пузыри чуть “холоднее” ночью */
 #aquarium.aq-night .bubble{
   background: rgba(200, 230, 255, 0.65);
 }
 
 
 @media (max-width: 768px) {
-  /* кнопка всегда сверху */
   .menu-toggle{
     position: fixed;
     top: 12px;
@@ -1250,29 +1194,25 @@ progress::-webkit-progress-value {
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* меню обычного размера, не огромное */
+
   .sidebar-menu{
     position: fixed !important;
-    top: 70px !important;     /* ниже кнопки/шапки */
+    top: 70px !important;     
     left: 15px !important;
-    width: 90% !important;    /* как у тебя было */
+    width: 90% !important;    
     max-height: calc(100vh - 90px);
     overflow: auto;
 
     z-index: 9999;
-
-    /* важно: когда закрыто — не перекрывает кнопку */
     pointer-events: none;
     opacity: 0;
     transform: translateY(-8px);
   }
 
-  /* когда открыто — кликабельно */
   .sidebar-menu.active{
     pointer-events: auto;
     opacity: 1;
     transform: none;
   }
 }
-
 
