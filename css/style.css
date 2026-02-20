@@ -1239,23 +1239,5 @@ progress::-webkit-progress-value {
 }
 
 
-/* FIX: чтобы бургер всегда был кликабельный на мобилке */
-@media (max-width: 768px) {
-  .menu-toggle{
-    position: fixed;      /* было absolute */
-    top: 15px;
-    left: 15px;
-    z-index: 99999;       /* выше, чем всё */
-    pointer-events: auto;
-  }
 
-  .custom-header{
-    position: relative;
-    z-index: 5000;        /* шапка тоже выше контента */
-  }
 
-  /* чтобы выпадающее меню не накрывало кнопку */
-  .sidebar-menu{
-    top: 70px;            /* было 0px */
-  }
-}
