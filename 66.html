@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фонд спасения аксолотлей</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Ваши стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="custom-header" id="header">
+        <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="container">
+            <h1>Форма заявки</h1>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="row">
+            <!-- Боковое меню -->
+            <div class="col-lg-3">
+                <nav class="sidebar-menu menu">
+                    <h3>Меню</h3>
+                    <a class="nav-link" href="11.html">💒 Главная</a>
+                    <a class="nav-link" href="22.html">📖 О фонде</a>
+                    <a class="nav-link" href="33.html">🌸 Наши проекты</a>
+                    <a class="nav-link" href="44.html">💌 Как помочь</a>
+                    <a class="nav-link" href="55.html">📞 Контакты</a>
+					<a class="nav-link" href="77.html">📊 Опрос</a>
+                </nav>
+            </div>
+
+            <!-- Основной контент -->
+            <div class="col-lg-9">
+			
+			<section class="content-section">
+    <h2>Наш виртуальный аквариум</h2>
+    <p>Смотрите, как плавают аксолотли! 🐠 Покормите их, пожалуйста.</p>
+
+    <div id="aquarium" class="aquarium-container"></div>
+
+<!-- Счётчик кормов -->
+<p id="foodDisplay">Кормов на счёте:  <span id="foodCounter">0</span></p>
+
+    <!-- Кнопка кормления -->
+    <button onclick="feedAquarium()" class="aquarium-btn">Покормить сейчас</button>
+</section>
+			
+                <!-- Форма -->
+                <section class="content-section">
+                    <h2>Заполните форму</h2>
+                    <p>Выберите, как вы хотите помочь и оставьте свои контакты, мы свяжемся с вами:</p>
+
+                    <form id="main_form" action="#" method="post" class="form-custom" autocomplete="on">
+                        <div class="mb-3">
+                            <label for="name">Имя:</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Введите ваше имя" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Введите ваш email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="help_type">Тип помощи:</label>
+                            <select id="help_type" name="help_type" class="form-control" required>
+                                <option value="">Выберите...</option>
+                                <option value="donation">Пожертвование</option>
+                                <option value="adoption">Усыновление аксолотля</option>
+                                <option value="volunteer">Волонтёрство</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message">Сообщение:</label>
+                            <textarea id="message" name="message" rows="3" class="form-control" placeholder="Ваше сообщение..."></textarea>
+                        </div>
+
+                        <!-- === ДОБАВЛЕННЫЕ БЛОКИ (по выбору) - НАХОДЯТСЯ ЗДЕСЬ, ЧТОБЫ СТРУКТУРА НЕ МЕНЯЛАСЬ === -->
+
+                        <!-- ПОЛЯ ДЛЯ ДОНАТА (изначально скрыты) -->
+                        <div id="donation_block" class="mt-3" style="display:none;">
+                            <h4 class="mb-3" style="color:#FF6F91;">Данные для пожертвования</h4>
+
+                            <div class="mb-3">
+                                <label for="card_number">Номер карты:</label>
+                                <input id="card_number" name="card_number" type="text" class="form-control" maxlength="19" placeholder="0000 0000 0000 0000">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label for="card_exp">MM/YY</label>
+                                    <input id="card_exp" name="card_exp" type="text" class="form-control" maxlength="5" placeholder="MM/YY">
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="card_cvc">CVC</label>
+                                    <input id="card_cvc" name="card_cvc" type="text" class="form-control" maxlength="3" placeholder="CVC">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="donation_amount">Сумма пожертвования (₽):</label>
+                                <input id="donation_amount" name="donation_amount" type="number" class="form-control" min="10" placeholder="Введите сумму">
+                            </div>
+                        </div>
+
+                        <!-- ПОЛЯ ДЛЯ УСЫНОВЛЕНИЯ / ОПЕКИ -->
+                        <div id="adoption_block" class="mt-3" style="display:none;">
+                            <h4 class="mb-3" style="color:#FF6F91;">Информация для усыновления / опеки</h4>
+
+                            <div class="mb-3">
+                                <label for="adopt_age">Возраст:</label>
+                                <input id="adopt_age" name="adopt_age" type="number" class="form-control" placeholder="Ваш возраст">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="adopt_address">Адрес проживания:</label>
+                                <input id="adopt_address" name="adopt_address" type="text" class="form-control" placeholder="Город, улица, дом">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="adopt_experience">Опыт содержания животных:</label>
+                                <textarea id="adopt_experience" name="adopt_experience" class="form-control" rows="3" placeholder="Опишите ваш опыт"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- ПОЛЯ ДЛЯ ВОЛОНТЁРСТВА -->
+                        <div id="volunteer_block" class="mt-3" style="display:none;">
+                            <h4 class="mb-3" style="color:#FF6F91;">Информация для волонтёров</h4>
+
+                            <div class="mb-3">
+                                <label for="vol_age">Ваш возраст:</label>
+                                <input id="vol_age" name="vol_age" type="number" class="form-control" placeholder="Возраст">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="vol_schedule">График, когда можете помогать:</label>
+                                <textarea id="vol_schedule_text" name="vol_schedule_text" rows="3" class="form-control" placeholder="Например: выходные, после 18:00 и т.д."></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="vol_help_type">Какая помощь возможна?</label>
+                                <select id="vol_help_type" name="vol_help_type" class="form-control">
+                                    <option value="">Выберите...</option>
+                                    <option value="foster">Передержка</option>
+                                    <option value="transport">Развоз животных</option>
+                                    <option value="base_help">Помощь на базе</option>
+                                    <option value="medical">Медицина</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Кнопка отправки -->
+                        <button type="submit" class="btn-custom mt-3">Отправить заявку</button>
+						
+					
+
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📧 axolotlfund@mail.ru</p>
+                    <p class="mb-0">📞 +7 800 555 35 55</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Адрес</h5>
+                    <a
+                        href="https://yandex.ru/maps/?text=ул.%20Тоннельная,%24д.%2032,%20Сочи"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Открыть адрес на Яндекс.Картах"
+                    >
+                        ул. Тоннельная, д. 24, г. Сочи, Россия
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Соцсети</h5>
+                    <p class="mb-1">
+                        <a href="https://vk.com/axolotlfund" target="_blank">📘 Вконтакте</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="https://telegram.org/axolotlfund" target="_blank">🎀 Телеграм</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr style="border-color: rgba(255,255,255,0.3); margin: 20px 0;">
+                    <p class="text-center mb-0">&copy; 2025 Фонд спасения аксолотлей. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="backToTop">Вернуться ⬆</button>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Ваши скрипты -->
+    <script src="js/меню.js"></script>
+	<script src="js/аква.js" defer></script>
+	<script src="js/db-hook.js" defer></script>
+
+
+<div id="toast_message" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 9999;
+">
+    Ваша заявка отправлена!❤️
+</div>
+
+
+</body>
+</html>

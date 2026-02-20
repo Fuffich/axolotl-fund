@@ -1,0 +1,1233 @@
+/* Подключение Bootstrap */
+/* Убедитесь, что bootstrap.min.css лежит в папке bootstrap/css/ */
+
+/* Ваши кастомные стили с адаптацией под Bootstrap */
+:root {
+    --pastel-pink: #FFE4E1;
+    --light-pink: #FFF0F5;
+    --very-light-pink: #FFF8F0;
+    --pastel-green: #A8E6CF;
+    --dark-green: #6B8E23;
+    --accent-pink: #FF6F91;
+    --header-gradient: linear-gradient(135deg, #32CD32, #FF69B4);
+}
+
+body {
+    background-color: var(--very-light-pink);
+    font-family: 'Minecraft Rus', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Шапка — яркий градиент */
+.custom-header {
+    background: var(--header-gradient);
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.custom-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* Кнопка меню для мобильных */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #A8E6CF;
+    color: #6B8E23;
+    font-family: 'Minecraft Rus', sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    z-index: 2000;
+}
+
+/* Боковое меню */
+.sidebar-menu {
+    position: absolute;       /* ← ДОБАВИЛ */
+    top: 0px;              /* ← ДОБАВИЛ - ровно под шапкой */
+    background-color: var(--pastel-pink);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0px);
+}
+
+.sidebar-menu.scrolling {
+    opacity: 0.6;
+}
+
+.sidebar-menu.compact {
+    position: fixed;         /* ← ДОБАВИЛ */
+    top: 20px;              /* ← ДОБАВИЛ - вверху во время скролла */
+    transform: translateY(0);
+}
+.sidebar-menu h3 {
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.sidebar-menu .nav-link {
+    color: var(--dark-green);
+    margin: 8px 0;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-menu .nav-link:hover {
+    background-color: #C1E1C1;
+    color: var(--accent-pink);
+}
+
+/* Контентные секции */
+.content-section {
+    background-color: var(--light-pink);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    transition: transform 0.3s;
+}
+
+.content-section:hover {
+    transform: translateY(-3px);
+}
+
+.content-section h2 {
+    color: var(--accent-pink);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.content-section p {
+    color: var(--dark-green);
+    font-size: 16px;
+    line-height: 1.7;
+    text-indent: 30px;
+    margin-bottom: 15px;
+}
+
+.content-section img {
+    border: 4px solid #FFD1DC;
+    border-radius: 15px;
+    margin: 15px auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Кнопки */
+.btn-custom {
+    display: inline-block;
+    background-color: var(--pastel-green);
+    color: #fff;
+    padding: 12px 25px;
+    margin: 10px 0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: #228B22;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Мини-игра */
+.axolotl-game {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #FFF5EE, #FFB6C1);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #444;
+    margin-bottom: 40px;
+    transition: transform 0.4s ease;
+}
+
+.axolotl-game:hover {
+    transform: scale(1.02);
+}
+
+.axolotl-game h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--dark-green);
+}
+
+.axolotl-game p {
+    font-size: 16px;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+}
+
+.axolotl-game img {
+    width: 200px;
+    margin-top: 10px;
+    transition: transform 0.4s ease;
+    border: 4px solid #FFD1DC;
+    border-radius: 15px;
+}
+
+.axolotl-game img.happy {
+    transform: rotate(5deg) scale(1.15);
+    filter: saturate(1.05) drop-shadow(0 6px 12px rgba(0,0,0,0.08));
+}
+
+/* Футер */
+.custom-footer {
+    background: var(--header-gradient);
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.custom-footer h5 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.custom-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.custom-footer a:hover {
+    color: #FFD1DC;
+}
+
+/* Кнопка "Наверх" */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: rgba(168, 230, 207, 0.8);
+    color: var(--dark-green);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.3s ease;
+    z-index: 1000;
+    font-family: 'Minecraft Rus', sans-serif;
+}
+
+#backToTop.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#backToTop:hover {
+    background-color: rgba(143, 188, 143, 0.9);
+    transform: scale(1.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .sidebar-menu {
+        display: none;
+        position: absolute;
+        top: 0px;
+        left: 15px;
+        width: 90%;
+        z-index: 1999;
+        margin-bottom: 0;
+    }
+    
+    .sidebar-menu.active {
+        display: block;
+        animation: dropDown 0.3s ease forwards;
+    }
+    
+    .custom-header h1 {
+        font-size: 22px;
+        line-height: 1.2;
+        word-wrap: break-word;
+        padding: 0 10px;
+    }
+    
+    #backToTop {
+        bottom: 15px;
+        right: 20px;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    
+    .content-section {
+        padding: 20px 15px;
+    }
+}
+
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Скрываем кнопку "Наверх" на десктопе */
+@media (min-width: 769px) {
+    #backToTop {
+        display: none !important;
+    }
+}
+
+
+/* Добавь эти стили в конец твоего CSS файла */
+
+/* Стили для таблицы */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Minecraft Rus', sans-serif;
+    margin-top: 15px;
+}
+
+.custom-table th {
+    background-color: var(--pastel-pink);
+    color: var(--accent-pink);
+    padding: 12px;
+    border: 1px solid #FFD1DC;
+    text-align: center;
+}
+
+.custom-table td {
+    background-color: var(--light-pink);
+    color: var(--dark-green);
+    padding: 12px;
+    border: 1px solid #FFD1DC;
+    text-align: center;
+}
+
+/* Адаптивность таблицы */
+@media (max-width: 768px) {
+    .custom-table th,
+    .custom-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+
+/* Стили для формы - адаптированные под Bootstrap */
+.form-custom .form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #FFD1DC;
+    font-size: 16px;
+    font-family: 'Minecraft Rus', sans-serif;
+    background-color: #FFF8F8;
+    color: #6B8E23;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.form-custom .form-control::placeholder {
+    color: #6B8E23;
+    opacity: 0.8;
+}
+
+/* Стили для select */
+.form-custom select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #FFF0F5;
+    background-image: linear-gradient(135deg, #FFB6C1, #FFD1DC);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px 18px;
+    border: 1px solid #FFD1DC;
+    padding-right: 35px;
+    cursor: pointer;
+}
+
+.form-custom select.form-control::-ms-expand {
+    display: none;
+}
+
+/* Подсветка розовым при фокусе */
+.form-custom .form-control:focus {
+    border-color: #FFB6C1;
+    box-shadow: 0 0 6px #FFB6C1;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+/* Стили для label */
+.form-custom label {
+    display: block;
+    font-weight: bold;
+    color: #FF6F91;
+    margin-bottom: 5px;
+}
+
+/* Стили для textarea */
+.form-custom textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Отступы для полей формы */
+.form-custom .mb-3 {
+    margin-bottom: 15px !important;
+}
+
+/* Кнопка формы */
+.form-custom .btn-custom {
+    display: inline-block;
+    background-color: #A8E6CF;
+    color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: 'Minecraft Rus', sans-serif;
+}
+
+.form-custom .btn-custom:hover {
+    background-color: #228B22;
+}
+
+/* Адаптивность для формы */
+@media (max-width: 768px) {
+    .form-custom .form-control {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .form-custom .btn-custom {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+
+
+
+
+/* Стили для фактов */
+.fact-box {
+    padding: 20px;
+    background-color: #FFF0F5; /* светло-розовый фон как у секций */
+    border-radius: 15px;
+    border-left: 5px solid #A8E6CF;
+    font-size: 1.1em;
+    margin: 15px 0;
+    color: #6B8E23; /* ЗЕЛЕНЫЙ текст как везде на сайте */
+    text-indent: 30px; /* Отступ как в основном тексте */
+    line-height: 1.7; /* Межстрочный интервал как везде */
+}
+
+.facts-sidebar {
+    background-color: #FFF0F5;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+    color: #6B8E23; /* ЗЕЛЕНЫЙ текст */
+}
+
+.facts-sidebar h4 {
+    color: #FF6F91; /* Розовый заголовок как h2 */
+    margin-bottom: 10px;
+}
+
+.fact-text {
+    color: #6B8E23; /* ЗЕЛЕНЫЙ текст */
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Аквариум */
+.aquarium-container {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(180deg, #87CEEB, #4682B4);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #A8E6CF;
+}
+
+.floating-axolotl {
+    position: absolute;
+    font-size: 2em;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateX(0) translateY(0) rotate(0deg); }
+    25% { transform: translateX(20px) translateY(10px) rotate(5deg); }
+    50% { transform: translateX(-15px) translateY(5px) rotate(-3deg); }
+    75% { transform: translateX(10px) translateY(-5px) rotate(2deg); }
+    100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+.btn-custom-small {
+    background-color: #A8E6CF;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: 'Minecraft Rus', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn-custom-small:hover {
+    background-color: #228B22;
+}
+
+
+
+
+
+
+
+
+/* Аквариум */
+.aquarium-container {
+    position: relative;
+    height: 250px;
+    background: linear-gradient(180deg, #87CEEB, #4682B4);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #A8E6CF;
+}
+
+
+.floating-axolotl-img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+    
+    /* Полный сброс всех возможных рамок */
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+	
+    /* Для IE */
+    border-style: none;
+}
+
+/* Каждый второй аксолотль отражаем для разнообразия */
+
+@keyframes float {
+    0% { transform: translateX(0) translateY(0) rotate(0deg) scaleX(1); }
+    25% { transform: translateX(20px) translateY(10px) rotate(5deg) scaleX(1); }
+    50% { transform: translateX(-15px) translateY(5px) rotate(-3deg) scaleX(1); }
+    75% { transform: translateX(10px) translateY(-5px) rotate(2deg) scaleX(1); }
+    100% { transform: translateX(0) translateY(0) rotate(0deg) scaleX(1); }
+}
+
+/* Пузыри */
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: bubble-rise linear infinite;
+    z-index: 1;
+}
+
+@keyframes bubble-rise {
+    0% { 
+        transform: translateY(250px) scale(0.5);
+        opacity: 0; 
+    }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { 
+        transform: translateY(-50px) scale(1.2);
+        opacity: 0; 
+    }
+}
+
+/* Еда */
+.food {
+    position: absolute;
+    animation: sink linear;
+    z-index: 3;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+}
+
+@keyframes sink {
+    0% { 
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(230px) rotate(180deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Кнопка кормления */
+.aquarium-btn {
+    background-color: #A8E6CF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Minecraft Rus', sans-serif;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.aquarium-btn:hover {
+    background-color: #228B22;
+    transform: scale(1.05);
+}
+
+
+/* Водоросли */
+.seaweed {
+    position: absolute;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(to top, #2E8B57, #3CB371, #66CDAA);
+    border-radius: 4px 4px 0 0;
+    animation: seaweed-sway ease-in-out infinite;
+    z-index: 0; /* Под аксолотлями и пузырями */
+}
+
+/* Листья водорослей (опционально) */
+.seaweed::before,
+.seaweed::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    background: #3CB371;
+    border-radius: 50%;
+}
+
+.seaweed::before {
+    top: 30%;
+    left: -12px;
+    transform: rotate(-30deg);
+}
+
+.seaweed::after {
+    top: 60%;
+    right: -12px;
+    transform: rotate(30deg);
+}
+
+/* Анимация колыхания водорослей */
+@keyframes seaweed-sway {
+    0%, 100% { 
+        transform: skewX(0deg) scaleY(1);
+    }
+    25% { 
+        transform: skewX(2deg) scaleY(1.05);
+    }
+    50% { 
+        transform: skewX(0deg) scaleY(1);
+    }
+    75% { 
+        transform: skewX(-2deg) scaleY(1.05);
+    }
+}
+
+/* Или более простая анимация */
+@keyframes seaweed-sway-simple {
+    0%, 100% { 
+        transform: translateX(0) skewX(0deg);
+    }
+    50% { 
+        transform: translateX(3px) skewX(3deg);
+    }
+}
+/* Обёртка аксолотля — её двигает JS */
+.axolotl {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  will-change: transform;
+  cursor: grab;
+  touch-action: none;
+}
+.axolotl:active { cursor: grabbing; }
+
+/* Картинка внутри — только “живая” анимация, без перемещения по аквариуму */
+.axolotl .floating-axolotl-img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  top: 0;
+
+  /* ВАЖНО: убираем старую анимацию float, которая двигала по X/Y */
+  animation: axo-wiggle 3.5s infinite ease-in-out;
+
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  user-select: none;
+  pointer-events: none; /* чтобы drag работал по wrapper */
+}
+
+/* Отражение без влияния на координаты */
+.axolotl .floating-axolotl-img.flip {
+  transform: scaleX(-1);
+}
+
+/* Лёгкое покачивание */
+@keyframes axo-wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(4deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Еда: убираем sink-анимацию, потому что падение будет JS (иначе transform конфликтует) */
+.food {
+  position: absolute;
+  z-index: 3;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+  animation: none !important;
+  will-change: transform, opacity;
+  transition: opacity .25s ease;
+}
+.food.fadeout { opacity: 0; }
+
+
+
+
+/* Плавное появление блоков */
+.fade-slide {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-slide.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Увеличиваем ширину текстовых полей для блоков */
+#adopt_experience, #vol_schedule, #message {
+    width: 100%;
+    min-height: 100px; /* можно увеличить */
+}
+/* Вставь в css/style.css в конце */
+.form-control {
+    width: 100% !important; /* всегда полная ширина */
+    box-sizing: border-box;  /* padding и border учитываются в ширине */
+}
+
+/* Если select тоже кастомно стилизован */
+select.form-control {
+    width: 100% !important;
+}
+
+
+
+/* Сделает текст некликабельным и нельзя выделять */
+.noclick {
+    pointer-events: none; /* запрет клика */
+    user-select: none;    /* запрет выделения текста */
+}
+
+
+
+
+
+
+
+/* ====================
+   СТИЛИ ДЛЯ ОПРОСНИКА
+   ==================== */
+
+/* Range (ползунок 1–10) */
+.form-custom input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(90deg, #FFB6C1, #A8E6CF);
+    border-radius: 10px;
+    outline: none;
+    margin-top: 5px;
+}
+
+.form-custom input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #FF6F91;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Firefox */
+.form-custom input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #FF6F91;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Радио кнопки */
+.form-custom input[type="radio"] {
+    accent-color: #FF6F91;
+    transform: scale(1.3);
+    margin-right: 6px;
+}
+
+/* Чекбоксы */
+.form-custom input[type="checkbox"] {
+    accent-color: #A8E6CF;
+    transform: scale(1.3);
+    margin-right: 6px;
+}
+
+/* Цветовая палитра */
+.form-custom input[type="color"] {
+    width: 60px;
+    height: 35px;
+    border-radius: 10px;
+    border: 2px solid #FFD1DC;
+    cursor: pointer;
+}
+
+/* Дата */
+.form-custom input[type="date"] {
+    background-color: #FFF8F8;
+    border-radius: 10px;
+}
+
+/* Файл */
+.form-custom input[type="file"] {
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #FFF0F5;
+    border: 2px dashed #FFD1DC;
+    cursor: pointer;
+}
+
+/* Progress (статистика) */
+progress {
+    width: 100%;
+    height: 22px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #FFF0F5;
+    border-radius: 12px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(90deg, #FF6F91, #A8E6CF);
+    border-radius: 12px;
+}
+
+/* Стат-блоки */
+.stat-box {
+    background: #FFF0F5;
+    border: 2px solid #FFD1DC;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Эффект наведения на варианты */
+.form-custom label:hover {
+    text-shadow: 0 0 2px #FFB6C1;
+}
+
+
+/* Анимация и оформление шкалы */
+
+.range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.range-wrapper span {
+    font-weight: bold;
+    color: #FF6F91;
+    font-size: 20px;
+    min-width: 30px;
+    text-align: center;
+    padding: 6px 10px;
+    background-color: #FFF0F5;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(255,182,193,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.range-wrapper span.pop {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255,105,145,0.8);
+}
+/* ===============================
+   КРАСИВЫЕ RADIO И CHECKBOX
+   =============================== */
+
+/* Прячем стандартные */
+.form-custom input[type="radio"],
+.form-custom input[type="checkbox"] {
+    display: none;
+}
+
+/* Общий стиль для кастомных вариантов */
+.form-custom .custom-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #FFF0F5;
+    border: 2px solid #FFD1DC;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin: 6px 0;
+    cursor: pointer;
+    transition: 0.2s ease;
+    color: #6B8E23;
+    font-family: 'Minecraft Rus', sans-serif;
+}
+
+/* Кружочек / квадратик */
+.form-custom .custom-option::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF6F91;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.2s ease;
+}
+
+/* Для checkbox меняем форму */
+.form-custom .custom-option.checkbox::before {
+    border-radius: 6px;
+}
+
+/* Когда выбрано */
+.form-custom input:checked + .custom-option::before {
+    background: #FF6F91;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+/* Наведение */
+.form-custom .custom-option:hover {
+    background: #FFE4E1;
+    transform: scale(1.02);
+}
+
+
+/* ===============================
+   INPUT TYPE COLOR
+   =============================== */
+.form-custom input[type="color"] {
+    width: 80px;
+    height: 45px;
+    border-radius: 15px;
+    border: 3px solid #FFB6C1;
+    padding: 4px;
+    background: #FFF8F8;
+    cursor: pointer;
+}
+
+
+/* ===============================
+   INPUT TYPE FILE
+   =============================== */
+
+.form-custom input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFB6C1, #A8E6CF);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.2s ease;
+}
+
+.custom-file-upload:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Стили вопроса 12 */
+
+.color-presets {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.color-presets input {
+    display: none;
+}
+
+.color-box {
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    border: 2px solid #FFD1DC;
+    background-color: #FFF0F5;
+    cursor: pointer;
+    color: #6B8E23;
+    transition: all 0.2s ease;
+}
+
+.color-box.pink { background: #FFD1DC; }
+/* Цвета как у шапки */
+.color-box.green {
+    background: linear-gradient(135deg, #32CD32, #6B8E23);
+    color: #fff;
+}
+
+.color-box.mix {
+    background: var(--header-gradient);
+    color: #fff;
+}
+
+
+.color-presets input:checked + .color-box {
+    border-color: #FF6F91;
+    box-shadow: 0 0 10px rgba(255,111,145,0.6);
+    transform: scale(1.05);
+}
+
+
+
+
+/* ====== Секция статистики ====== */
+.content-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #FF6F91; /* основной цвет сайта */
+}
+
+.content-section .row .col-md-4 .p-3 {
+    background-color: #fff0f5; /* нежный розовый фон, похожий на стиль сайта */
+    border-radius: 15px;
+    padding: 25px 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-section .row .col-md-4 .p-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.content-section .row .col-md-4 h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #FF6F91;
+}
+
+.content-section .row .col-md-4 p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ====== Прогрессбар ====== */
+.content-section progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #f0d7e0; /* светлый фон */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.content-section progress::-webkit-progress-bar {
+    background-color: #f0d7e0;
+}
+
+.content-section progress::-webkit-progress-value {
+    background-color: #FF6F91;
+    border-radius: 15px;
+    transition: width 0.5s ease;
+}
+
+.content-section progress::-moz-progress-bar {
+    background-color: #FF6F91;
+    border-radius: 15px;
+    transition: width 0.5s ease;
+}
+
+/* ====== Лейбл прогресса ====== */
+.content-section label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    color: #FF6F91;
+}
+
+
+#foodDisplay {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF6F91;
+    background: var(--pastel-green);
+    border-radius: 12px;
+    padding: 8px 15px;
+    margin: 10px auto 15px auto;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    text-indent: 0; /* <- сбрасываем отступ */
+}
+
+
+//Аквариум
+
+/* ====== HUD (уровень/комбо) ====== */
+.aq-hud{
+  position:absolute; left:10px; top:10px; z-index:10;
+  background: rgba(255,240,245,0.88);
+  border:2px solid #FFD1DC; border-radius:12px;
+  padding:8px 10px;
+  font-family:'Minecraft Rus', sans-serif;
+  color:#6B8E23; font-size:13px; line-height:1.25;
+  backdrop-filter: blur(4px);
+}
+.aq-hud b{ color:#228B22; }
+
+/* ====== “поел” (пункт 2) ====== */
+.axolotl .floating-axolotl-img.eat {
+  animation: eat-pop 0.18s ease-out 0s 2;
+}
+@keyframes eat-pop {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* ====== golden food (пункт 12) ====== */
+.food.gold{
+  text-shadow: 0 0 10px rgba(255,215,0,0.9);
+  filter: drop-shadow(0 0 8px rgba(255,215,0,0.65));
+}
+
+/* ====== “party mode” (пункт 5) ====== */
+.aq-party{
+  box-shadow: 0 0 0 3px rgba(255,105,180,0.35) inset;
+}
+
+
+/* Панель под/рядом с аквариумом */
+.aq-panel{
+  max-width: 520px;
+  margin: 12px auto 0;
+  background: rgba(255,240,245,0.92);
+  border: 2px solid #FFD1DC;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-family: 'Minecraft Rus', sans-serif;
+  color: #6B8E23;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.aq-panel-row{
+  display:flex;
+  gap:10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aq-stats{
+  font-size: 13px;
+  line-height: 1.25;
+}
+.aq-stats b{ color:#228B22; }
+
+.aq-btn{
+  border:none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: var(--accent-pink, #FF6F91);
+  color:#fff;
+  cursor:pointer;
+  font-family: 'Minecraft Rus', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 10px 22px rgba(255,105,180,0.18);
+}
+
+/* Тема "Ночь" — меняем фон аквариума */
+#aquarium.aq-night{
+  background: linear-gradient(180deg, #0b1630, #0b3a66);
+  border-color: #A8E6CF;
+}
+
+/* Пузыри чуть “холоднее” ночью */
+#aquarium.aq-night .bubble{
+  background: rgba(200, 230, 255, 0.65);
+}

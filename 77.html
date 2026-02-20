@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос о сайте</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Ваши стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="custom-header" id="header">
+    <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+    <div class="container">
+        <h1>Опрос посетителей сайта</h1>
+    </div>
+</header>
+
+<main class="container">
+    <div class="row">
+
+        <!-- Боковое меню -->
+        <div class="col-lg-3">
+            <nav class="sidebar-menu menu">
+                <h3>Меню</h3>
+                <a class="nav-link" href="11.html">💒 Главная</a>
+                <a class="nav-link" href="22.html">📖 О фонде</a>
+                <a class="nav-link" href="33.html">🌸 Наши проекты</a>
+                <a class="nav-link" href="44.html">💌 Как помочь</a>
+                <a class="nav-link" href="55.html">📞 Контакты</a>
+                <a class="nav-link" href="77.html">📊 Опрос</a>
+            </nav>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="col-lg-9">
+            <section class="content-section">
+                <h2>Анкета обратной связи</h2>
+                <p>Помогите нам улучшить сайт — ответьте на несколько вопросов:</p>
+
+                <form id="survey_form" enctype="multipart/form-data" class="form-custom" autocomplete="on">
+
+
+                    <!-- 1 -->
+                    <div class="mb-3">
+                        <label>1. Как вас зовут?</label>
+                        <input type="text" class="form-control" name="name" autocomplete="name" placeholder="Ваше имя" required>
+
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="mb-3">
+                        <label>2. Ваш email:</label>
+                        <input type="email" class="form-control" name="email" autocomplete="email" placeholder="______@mail.ru" required>
+                    </div>
+					                    <div class="mb-3">
+                        <label>3. Ваша дата рождения:</label>
+                        <input type="date" class="form-control" name="birthdate" autocomplete="bday" required>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="mb-3">
+                        <label>4. Оцените дизайн сайта (1–10):</label>
+                        <div class="range-wrapper">
+                            <input type="range" min="1" max="10" value="5" id="designRange" class="form-range styled-range" required>
+                            <span id="designValue">5</span>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="mb-3">
+                        <label>5. Вам нравятся аксолотли?</label>
+                        <input type="radio" name="like_axo" id="like_yes">
+                        <label for="like_yes" class="custom-option" required>Да</label>
+                        <input type="radio" name="like_axo" id="like_no">
+                        <label for="like_no" class="custom-option">Нет</label>
+                    </div>
+<!-- 16 -->
+                    <div class="mb-3">
+                        <label>6. Знали ли вы ранее об аксолотлях?</label>
+                        <input type="radio" name="know_axo" id="know_yes">
+                        <label for="know_yes" class="custom-option" required>Да</label>
+                        <input type="radio" name="know_axo" id="know_no">
+                        <label for="know_no" class="custom-option">Нет</label>
+                    </div>
+
+                    <!-- 17 -->
+                    <div class="mb-3">
+                        <label>7. Хотели бы вы узнать, как ухаживать за аксолотлем?</label>
+                        <input type="radio" name="care_axo" id="care_yes">
+                        <label for="care_yes" class="custom-option" required>Да</label>
+                        <input type="radio" name="care_axo" id="care_no">
+                        <label for="care_no" class="custom-option">Нет</label>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="mb-3">
+                        <label>8. Вы раньше делали пожертвования на нашем сайте?</label>
+                        <input type="radio" name="donated" id="donated_yes">
+                        <label for="donated_yes" class="custom-option" required>Да</label>
+                        <input type="radio" name="donated" id="donated_no">
+                        <label for="donated_no" class="custom-option">Нет</label>
+                    </div>
+
+                    <!-- Скрытый блок с суммой -->
+                    <div class="mb-3" id="donationAmountBlock" style="display: none;">
+                        <label>Укажите сумму пожертвования (₽):</label>
+                        <input type="number" id="donationAmount" name="donationAmount" class="form-control" min="10" step="1" placeholder="Введите сумму">
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="mb-3">
+                        <label>9. Какой стиль сайта вам ближе?</label>
+                        <div class="color-presets">
+                            <input type="radio" name="site_color" id="color_pink">
+                            <label for="color_pink" class="color-box pink" required>Розовый</label>
+
+                            <input type="radio" name="site_color" id="color_green">
+                            <label for="color_green" class="color-box green">Зелёный</label>
+
+                            <input type="radio" name="site_color" id="color_mix">
+                            <label for="color_mix" class="color-box mix">Смешанный</label>
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="mb-3">
+                        <label>10. Как часто вы заходите на сайт?</label>
+                        <select class="form-control">
+                            <option>Каждый день</option>
+                            <option>Раз в неделю</option>
+                            <option>Раз в месяц</option>
+                            <option>Первый раз</option>
+                        </select>
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="mb-3">
+                        <label>11. Что вам больше всего импонирует?</label>
+                        <input type="checkbox" id="like_design">
+                        <label for="like_design" class="custom-option checkbox" required>Дизайн</label>
+                        <input type="checkbox" id="like_content">
+                        <label for="like_content" class="custom-option checkbox">Контент</label>
+                        <input type="checkbox" id="like_axo2">
+                        <label for="like_axo2" class="custom-option checkbox">Аксолотли</label>
+                        <input type="checkbox" id="like_simple">
+                        <label for="like_simple" class="custom-option checkbox">Простота сайта</label>
+                    </div>
+
+                    <!-- 9 -->
+                    <div class="mb-3">
+                        <label>12. Что по вашему мнению стоит улучшить?</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <!-- 10 -->
+                    <div class="mb-3">
+                        <label>13. На каком устройстве вы сидите?</label>
+                        <select class="form-control">
+                            <option>Телефон</option>
+                            <option>Компьютер</option>
+                            <option>Планшет</option>
+                            <option>Приставка</option>
+                        </select>
+                    </div>
+                   
+
+                    <!-- 19 -->
+                    <div class="mb-3">
+                        <label>14. Готовы ли вы стать волонтёром фонда?</label>
+                        <input type="radio" name="volunteer" id="vol_yes">
+                        <label for="vol_yes" class="custom-option" required>Да</label>
+                        <input type="radio" name="volunteer" id="vol_no">
+                        <label for="vol_no" class="custom-option">Нет</label>
+                    </div>
+
+                    <!-- 13 -->
+                    <div class="mb-3">
+                        <label>15. Оцените удобство сайта (1–5):</label>
+                        <div class="range-wrapper">
+                            <input type="range" min="1" max="5" value="3" id="comfortRange" class="form-range styled-range">
+                            <span id="comfortValue">3</span>
+                        </div>
+                    </div>
+
+                    <!-- 14 -->
+                    <div class="mb-3">
+                        <label>16. Хотите получать новости?</label>
+                        <input type="checkbox" id="subscribe_news">
+                        <label for="subscribe_news" class="custom-option checkbox">Да, хочу ✉️</label>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label>17. Через какие соцсети вы чаще всего узнаёте новости о фонде?</label>
+                        <input type="checkbox" id="social_vk">
+                        <label for="social_vk" class="custom-option checkbox" required>ВКонтакте</label>
+                        <input type="checkbox" id="social_tg">
+                        <label for="social_tg" class="custom-option checkbox">Telegram</label>
+                        <input type="checkbox" id="social_insta">
+                        <label for="social_insta" class="custom-option checkbox">Instagram</label>
+                    </div>
+
+
+
+<div class="mb-3">
+    <label>18. Прикрепите картинку, которая вам нравится:</label><br>
+    <label class="custom-file-upload" for="file_upload">Выбрать файл</label>
+    <input type="file" id="file_upload" accept="image/*">
+    <div id="filePreview" style="margin-top: 10px;"></div>
+</div>
+
+                    <button type="submit" class="btn-custom mt-3">Отправить опрос</button>
+                </form>
+
+            </section>
+
+
+
+            <!-- ================= СТАТИСТИКА ================= -->
+
+			
+            <section class="content-section mt-5">
+                <h2>Общая статистика сайта </h2>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded bg-light">
+                            <h3>👥 1 254</h3>
+                            <p>Всего участников опроса</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded bg-light">
+                            <h3>💖 92%</h3>
+                            <p>Любят аксолотлей</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded bg-light">
+                            <h3>⭐ 4.7 / 5</h3>
+                            <p>Средняя оценка сайта</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label>Уровень удовлетворённости посетителей:</label>
+                    <progress value="87" max="100" style="width:100%; height: 25px;"></progress>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+ <!-- Футер -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📧 axolotlfund@mail.ru</p>
+                    <p class="mb-0">📞 +7 800 555 35 55</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Адрес</h5>
+                    <a
+                        href="https://yandex.ru/maps/?text=ул.%20Тоннельная,%24д.%2032,%20Сочи"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Открыть адрес на Яндекс.Картах"
+                    >
+                        ул. Тоннельная, д. 24, г. Сочи, Россия
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Соцсети</h5>
+                    <p class="mb-1">
+                        <a href="https://vk.com/axolotlfund" target="_blank">📘 Вконтакте</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="https://telegram.org/axolotlfund" target="_blank">🎀 Телеграм</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr style="border-color: rgba(255,255,255,0.3); margin: 20px 0;">
+                    <p class="text-center mb-0">&copy; 2025 Фонд спасения аксолотлей. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<button id="backToTop">Вернуться ⬆</button>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/меню.js"></script>
+<script src="js/survey.js"></script>
+<script src="js/db-hook.js" defer></script>
+
+<div id="toast_message" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 9999;
+">
+    Ваши результаты отправлены! ❤️
+</div>
+
+
+</body>
+</html>
