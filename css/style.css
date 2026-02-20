@@ -1,6 +1,12 @@
 /* Подключение Bootstrap */
 /* Убедитесь, что bootstrap.min.css лежит в папке bootstrap/css/ */
-
+@font-face {
+  font-family: "Minecraft Rus";
+  src: url("../minecraft.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* Ваши кастомные стили с адаптацией под Bootstrap */
 :root {
     --pastel-pink: #FFE4E1;
@@ -1231,3 +1237,4 @@ progress::-webkit-progress-value {
 #aquarium.aq-night .bubble{
   background: rgba(200, 230, 255, 0.65);
 }
+
