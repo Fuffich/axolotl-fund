@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Опрос о сайте</title>
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Ваши стили -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,7 +21,6 @@
 <main class="container">
     <div class="row">
 
-        <!-- Боковое меню -->
         <div class="col-lg-3">
             <nav class="sidebar-menu menu">
                 <h3>Меню</h3>
@@ -35,7 +33,6 @@
             </nav>
         </div>
 
-        <!-- Основной контент -->
         <div class="col-lg-9">
             <section class="content-section">
                 <h2>Анкета обратной связи</h2>
@@ -44,14 +41,14 @@
                 <form id="survey_form" enctype="multipart/form-data" class="form-custom" autocomplete="on">
 
 
-                    <!-- 1 -->
+              
                     <div class="mb-3">
                         <label>1. Как вас зовут?</label>
                         <input type="text" class="form-control" name="name" autocomplete="name" placeholder="Ваше имя" required>
 
                     </div>
 
-                    <!-- 2 -->
+           
                     <div class="mb-3">
                         <label>2. Ваш email:</label>
                         <input type="email" class="form-control" name="email" autocomplete="email" placeholder="______@mail.ru" required>
@@ -61,7 +58,7 @@
                         <input type="date" class="form-control" name="birthdate" autocomplete="bday" required>
                     </div>
 
-                    <!-- 3 -->
+               
                     <div class="mb-3">
                         <label>4. Оцените дизайн сайта (1–10):</label>
                         <div class="range-wrapper">
@@ -70,7 +67,7 @@
                         </div>
                     </div>
 
-                    <!-- 4 -->
+              
                     <div class="mb-3">
                         <label>5. Вам нравятся аксолотли?</label>
                         <input type="radio" name="like_axo" id="like_yes">
@@ -78,7 +75,7 @@
                         <input type="radio" name="like_axo" id="like_no">
                         <label for="like_no" class="custom-option">Нет</label>
                     </div>
-<!-- 16 -->
+
                     <div class="mb-3">
                         <label>6. Знали ли вы ранее об аксолотлях?</label>
                         <input type="radio" name="know_axo" id="know_yes">
@@ -87,7 +84,7 @@
                         <label for="know_no" class="custom-option">Нет</label>
                     </div>
 
-                    <!-- 17 -->
+     
                     <div class="mb-3">
                         <label>7. Хотели бы вы узнать, как ухаживать за аксолотлем?</label>
                         <input type="radio" name="care_axo" id="care_yes">
@@ -96,7 +93,7 @@
                         <label for="care_no" class="custom-option">Нет</label>
                     </div>
 
-                    <!-- 5 -->
+              
                     <div class="mb-3">
                         <label>8. Вы раньше делали пожертвования на нашем сайте?</label>
                         <input type="radio" name="donated" id="donated_yes">
@@ -105,13 +102,13 @@
                         <label for="donated_no" class="custom-option">Нет</label>
                     </div>
 
-                    <!-- Скрытый блок с суммой -->
+   
                     <div class="mb-3" id="donationAmountBlock" style="display: none;">
                         <label>Укажите сумму пожертвования (₽):</label>
                         <input type="number" id="donationAmount" name="donationAmount" class="form-control" min="10" step="1" placeholder="Введите сумму">
                     </div>
 
-                    <!-- 6 -->
+              
                     <div class="mb-3">
                         <label>9. Какой стиль сайта вам ближе?</label>
                         <div class="color-presets">
@@ -126,7 +123,7 @@
                         </div>
                     </div>
 
-                    <!-- 7 -->
+              
                     <div class="mb-3">
                         <label>10. Как часто вы заходите на сайт?</label>
                         <select class="form-control">
@@ -137,7 +134,7 @@
                         </select>
                     </div>
 
-                    <!-- 8 -->
+               
                     <div class="mb-3">
                         <label>11. Что вам больше всего импонирует?</label>
                         <input type="checkbox" id="like_design">
@@ -150,13 +147,13 @@
                         <label for="like_simple" class="custom-option checkbox">Простота сайта</label>
                     </div>
 
-                    <!-- 9 -->
+            
                     <div class="mb-3">
                         <label>12. Что по вашему мнению стоит улучшить?</label>
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
 
-                    <!-- 10 -->
+ 
                     <div class="mb-3">
                         <label>13. На каком устройстве вы сидите?</label>
                         <select class="form-control">
@@ -168,7 +165,6 @@
                     </div>
                    
 
-                    <!-- 19 -->
                     <div class="mb-3">
                         <label>14. Готовы ли вы стать волонтёром фонда?</label>
                         <input type="radio" name="volunteer" id="vol_yes">
@@ -177,7 +173,7 @@
                         <label for="vol_no" class="custom-option">Нет</label>
                     </div>
 
-                    <!-- 13 -->
+          
                     <div class="mb-3">
                         <label>15. Оцените удобство сайта (1–5):</label>
                         <div class="range-wrapper">
@@ -186,7 +182,7 @@
                         </div>
                     </div>
 
-                    <!-- 14 -->
+       
                     <div class="mb-3">
                         <label>16. Хотите получать новости?</label>
                         <input type="checkbox" id="subscribe_news">
@@ -220,7 +216,6 @@
 
 
 
-            <!-- ================= СТАТИСТИКА ================= -->
 
 			
             <section class="content-section mt-5">
@@ -255,7 +250,7 @@
     </div>
 </main>
 
- <!-- Футер -->
+
     <footer class="custom-footer">
         <div class="container">
             <div class="row">
@@ -320,6 +315,7 @@
 
 </body>
 </html>
+
 
 
 
