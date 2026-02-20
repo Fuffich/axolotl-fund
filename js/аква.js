@@ -1,9 +1,3 @@
-/* =======================
-   POPUP (в стиле сайта)
-   Показываем ТОЛЬКО важное:
-   - нет корма
-   - началась вечеринка
-   ======================= */
 function showPopup(message) {
   if (!document.getElementById('simplePopupStyle')) {
     const style = document.createElement('style');
@@ -110,10 +104,7 @@ function showPopup(message) {
 }
 
 
-/* =======================
-   DONATION -> FOOD (localStorage)
-   1 корм = 10 ₽
-   ======================= */
+
 (() => {
   const FOOD_KEY = 'foodCount';
   const RATE = 10;
@@ -130,7 +121,7 @@ function showPopup(message) {
     if (counter) counter.textContent = String(v);
   }
 
-  // глобально, потому что в HTML onclick="feedAquarium()"
+
   window.feedAquarium = function () {
     const current = getFood();
     if (current <= 0) {
@@ -175,14 +166,10 @@ function showPopup(message) {
 })();
 
 
-/* =======================
-   AQUARIUM ENGINE
-   ======================= */
 document.addEventListener('DOMContentLoaded', () => {
   const aquarium = document.getElementById('aquarium');
   if (!aquarium) return;
 
-  /* ---------- инжект стилей ---------- */
   if (!document.getElementById('aqEngineStyle')) {
     const st = document.createElement('style');
     st.id = 'aqEngineStyle';
@@ -198,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         font-family: 'Minecraft Rus', sans-serif;
       }
 
-      /* строго: сверху строка (стата + кнопка), ниже полоска */
+      /* сверху строка (стата + кнопка), ниже полоска */
       .aq-panel-body{
         padding: 10px 12px 12px;
         display:flex;
@@ -211,16 +198,15 @@ document.addEventListener('DOMContentLoaded', () => {
         align-items:center;
         justify-content: space-between;
         gap: 10px;
-        flex-wrap: nowrap; /* НЕ переносим кнопку вниз */
+        flex-wrap: nowrap; 
       }
 
-      /* ВАЖНО: даём блоку статистики сжиматься внутри flex */
+
       #aqStats{
         flex: 1 1 auto;
         min-width: 0;
       }
 
-      /* статистика всегда в ОДНУ линию; если не влезла — горизонтальный скролл */
       .aq-row{
         display:flex;
         gap:8px;
@@ -253,11 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
         flex: 0 0 auto;
       }
 
-      /* Название — розовое, двоеточие + цифры — зелёные */
+      /* Название розовое, двоеточие + цифры зелёные */
       .aq-label{ color: var(--accent-pink, #FF6F91); font-weight: 800; }
       .aq-sep, .aq-val{ color: var(--dark-green, #6B8E23); font-weight: 800; }
 
-      /* Полоска счастья: фикс по контейнеру панели (не “прыгает”), заполнение внутри */
       .aq-happyBar{
         height: 10px;
         width: 100%;
@@ -290,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .aq-btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
       .aq-btn:active{ transform: translateY(0); }
 
-      /* Ночь: чуть темнее, но не мрак */
       #aquarium.aq-night{
         background: linear-gradient(180deg, #4f86b6, #2f5f8e);
         border-color: #A8E6CF;
@@ -315,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(st);
   }
 
-  /* ---------- настройки ---------- */
   const AXO_COUNT = 6;
   const AXO_SIZE = 50;
   const FOOD_SIZE = 18;
@@ -339,13 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const PARTY_DURATION_MS = 5500;
   const PARTY_COOLDOWN_MS = 90000;
 
-  // Счастье: шкала с нуля на каждый новый уровень счастья
+  // Счастье
   const HAPPY_XP_PER_LEVEL = 12;
 
   aquarium.style.position = aquarium.style.position || 'relative';
   aquarium.style.overflow = aquarium.style.overflow || 'hidden';
 
-  /* ---------- state (localStorage) ---------- */
   const PROG_KEY = 'aqProgressV3';
   const state = (() => {
     try { return JSON.parse(localStorage.getItem(PROG_KEY) || '{}'); } catch { return {}; }
@@ -391,7 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
     saveState();
   }
 
-  /* ---------- панель ---------- */
   const panel = document.createElement('div');
   panel.className = 'aq-panel';
   panel.innerHTML = `
@@ -450,11 +431,9 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme();
   renderHUD();
 
-  /* ---------- ассеты ---------- */
   const AXO_IMAGES = ['images/1.png', 'images/2.png', 'images/3.png', 'images/3.png'];
   const FOOD_EMOJI = ['🪱', '🍤', '🐛'];
 
-  /* ---------- утилиты ---------- */
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const dist2 = (a, b) => {
     const dx = a.x - b.x, dy = a.y - b.y;
@@ -471,7 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
     catch { return String(Math.random()).slice(2) + String(Date.now()); }
   }
 
-  /* ---------- фон ---------- */
   function createBubbles() {
     for (let i = 0; i < 15; i++) {
       const bubble = document.createElement('div');
@@ -511,11 +489,9 @@ document.addEventListener('DOMContentLoaded', () => {
   createBubbles();
   createSeaweed();
 
-  /* ---------- модели ---------- */
   const axos = [];
   const foods = [];
 
-  /* ---------- аксолотли ---------- */
   function createAxolotl() {
     const img = document.createElement('img');
     img.className = 'floating-axolotl-img';
@@ -585,7 +561,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return a;
   }
 
-  /* ---------- корм ---------- */
   function createFood() {
     const el = document.createElement('div');
     el.className = 'food';
@@ -623,7 +598,6 @@ document.addEventListener('DOMContentLoaded', () => {
     createFood();
   };
 
-  /* ---------- ИИ ---------- */
   let lastAssign = 0;
 
   function canStillEatBottomFood(food) {
@@ -677,7 +651,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => b.remove(), 5000);
   }
 
-  /* ---------- цикл ---------- */
   function step(now) {
     const { w, h } = aquariumRect();
 
@@ -840,4 +813,5 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < AXO_COUNT; i++) createAxolotl();
   requestAnimationFrame(step);
 });
+
 
